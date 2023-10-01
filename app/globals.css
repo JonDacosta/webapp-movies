@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../public/fonts/Roboto-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+  }
+
+html,
+body {
+  background: linear-gradient(rgb(0 0 0 / 80%), rgb(0 0 0 / 122%)),
+  url(../public/images/bg-films.jpg);
+  background-size: auto;
+  min-height: 100vh;
+  background-repeat: repeats;
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  /* color: inherit; */
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-filmcard {
+  background-color: #f0ffffc4;
+  border-radius: 20px;
+  width: auto;
+}
+.bg-filmscard {
+  background-color: #213143b4;
+  border-radius: 20px;
+  width: auto;
+  color: white;
+}
+.badge {
+  position: absolute;
+  top: 3%;
+  right: 5%;
+  background-color: #131313;
+  color: rgb(252, 244, 235);
+  font-weight: 700;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.green-border {
+  border: 2px solid rgb(24, 185, 24);
+}
+
+.red-border {
+  border: 2px solid rgb(138, 9, 9);
+}
+
+.border-20 {
+  border-radius: 20px;
+}
+.text-white {
+  color: #ffffff;
+}
+.text-error {
+  color: rgb(145, 21, 21);
+}
+.text-shadow {
+  text-shadow: 1px 3px 2px rgba(0,0,0,0.6);
+}

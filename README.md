@@ -1,6 +1,6 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+
+## WebApp - Buscador de peliculas
 
 First, run the development server:
 
@@ -31,4 +31,48 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Interfaces 🔧
+
+Para crear las interfaces, copiamos la respuesta de la API y en el IDE (Visual Studio Code) usamos
+Paste JSON as Code, esto nos crea automaticamente el tipado de los datos.
+
+# all-movies
+# movie
+# movie-response
+# simple-movie
+
+<!-- /////////////////////////////////////////////////////////////////////////////////// -->
+Webapp - buscador de películas
+<!-- /////////////////////////////////////////////////////////////////////////////////// -->
+Next 13 -> Using App Router
+(Desde la versión 13 se recomienda usar la carpeta /app, no /pages)
+Typescript
+Tailwind (en la mayoría de componentes)
+Styled component (Navbar)
+<!-- /////////////////////////////////////////////////////////////////////////////////// -->
+Fetch de datos:
+
+<!-- /////////////////////////////////////////////////////////////////////////////////// -->
+Hooks: ⚓
+    useRef-> Crear una referencia para guardar valores, cuando cambia, no renderiza de nuevo. (useState al contrario cambiar sí renderiza cuando cambia).  
+<!-- /////////////////////////////////////////////////////////////////////////////////// -->
+Error handing: ❌
+
+- Página 404 creada en: not-found.tsx
+  [not-found Doc](https://nextjs.org/docs/app/api-reference/file-conventions/not-found)
+- Dentro de cada película creamos otro not-found.tsx que se comprueba en un try/catch al obtener los datos, si resulta error, salta un 404.
+
+<!-- /////////////////////////////////////////////////////////////////////////////////// -->
+Metadata dinámica: 📒
+con Next pasamos la metadata para cada película exportando su título y la descripción.
+
+Con función asíncrona:generateMetadata y la Promesa Metadata de Next.
+
+desestructuramos de la info recibida lo que queremos, en este caso el título: original_title 
+<!-- /////////////////////////////////////////////////////////////////////////////////// -->
+
+
+https://nextjs.org/docs/app/building-your-application/routing/error-handling
+
+
+En Image usamos priorify={ false } para que las imágenes se carguen bajo demanda.
