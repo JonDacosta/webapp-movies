@@ -2,15 +2,7 @@ import { MoviesResponse } from "./interfaces/movies-response";
 import { SimpleMovie } from "./interfaces/simple-movies";
 import { MoviesGrid } from "./components/MoviesGrid";
 import { Navbar } from "../../components";
-
-const options = {
-    method: 'GET',
-    headers: {
-      accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMTBjOWYyMzI0M2M5NTkxNjVmZDk3NTNkOGRmZjUzZSIsInN1YiI6IjY1MTRhNzNjYmRkNTY4MDBlNDZiNjhjNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.AxOgaOfeonCf3a4GT1ahG0LLFReyM9HMF8namSMD74k'
-    }
-  };
-
+import { options } from '../services/api'
 
 const getMovies = async( ):Promise<SimpleMovie[]> => {
     const data:MoviesResponse = await fetch('https://api.themoviedb.org/3/movie/popular?language=es-ES', options)
@@ -26,7 +18,6 @@ const getMovies = async( ):Promise<SimpleMovie[]> => {
     // throw new Error('Error');
     return movies;
 }
-
 
 export default async function MoviesPage() {
 

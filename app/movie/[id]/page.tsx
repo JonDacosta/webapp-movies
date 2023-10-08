@@ -5,14 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Navbar } from '../../../components';
 import { notFound } from 'next/navigation';
-
-const options = {
-    method: 'GET',
-    headers: {
-        accept: 'application/json',
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMTBjOWYyMzI0M2M5NTkxNjVmZDk3NTNkOGRmZjUzZSIsInN1YiI6IjY1MTRhNzNjYmRkNTY4MDBlNDZiNjhjNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.AxOgaOfeonCf3a4GT1ahG0LLFReyM9HMF8namSMD74k'
-    },
-};
+import { options } from '../../services/api'
 
 interface Props {
     params: { id: string }
@@ -75,7 +68,7 @@ export default async function MoviePage({ params }: Props) {
 
                     <div className="relative flex flex-col items-center rounded-[20px] w-[700px] max-w-[95%] mx-auto bg-white bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:!shadow-none p-3">
                         <div className="mt-2 mb-8 w-full">
-                            <h4 className="px-2 mb-5 text-4xl font-bold text-navy-700 dark:text-white">
+                            <h4 className="px-2 mb-5 text-4xl font-bold text-navy-700 dark:text-white" data-testid="test-title">
                                 {movie.original_title}
 
 
@@ -98,7 +91,7 @@ export default async function MoviePage({ params }: Props) {
                             <div className="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
                                 <p className="text-sm text-gray-600">Idioma original:</p>
                                 <p className="text-base font-medium text-navy-700 dark:text-white">
-                                    { movie.original_language }
+                                    {movie.original_language}
                                 </p>
                             </div>
 
@@ -107,7 +100,7 @@ export default async function MoviePage({ params }: Props) {
                                 <p className="text-sm text-gray-600">Puntuación {`${Math.floor(movie.vote_average) > 5 ? '👍🏽' : '👎🏽'} `}</p>
                                 <p className="text-base font-medium text-green-700 dark:text-white">
                                     {Math.floor(movie.vote_average)}
-                                    
+
                                 </p>
                             </div>
 
